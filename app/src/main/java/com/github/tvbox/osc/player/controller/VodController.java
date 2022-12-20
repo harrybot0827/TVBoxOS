@@ -1,5 +1,7 @@
 package com.github.tvbox.osc.player.controller;
 
+import android.app.RemoteAction;
+import android.app.PictureInPictureParams;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -16,8 +18,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
-
-import com.lzf.easyfloat.EasyFloat;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.github.tvbox.osc.R;
@@ -612,7 +612,17 @@ public class VodController extends BaseController {
     }
 
     void setWindowFloat() {
-        EasyFloat.with(this).show();
+            List<RemoteAction> actions = new ArrayList<>();
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_previous, PIP_BOARDCAST_ACTION_PREV, "Prev", "Play Previous"));
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_play, PIP_BOARDCAST_ACTION_PLAYPAUSE, "Play", "Play/Pause"));
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_next, PIP_BOARDCAST_ACTION_NEXT, "Next", "Play Next"));
+            PictureInPictureParams params = new PictureInPictureParams.Builder().setActions(actions).build();
+/*            if (!fullWindows) {
+                toggleFullPreview();
+            }
+*/            enterPictureInPictureMode(params);
+//            playFragment.getVodController().hideBottom();
+        }
     }
 
     void setLandscapePortrait() {
