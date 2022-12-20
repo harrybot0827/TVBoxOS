@@ -234,6 +234,8 @@ public class VodController extends BaseController {
 
         mParseRoot.setVisibility(VISIBLE);
 
+        mWindowFloatBtn.setVisibility(VISIBLE);
+
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -591,7 +593,6 @@ public class VodController extends BaseController {
             public void onClick(View view) {
                 FastClickCheckUtil.check(view);
                 setLandscapePortrait();
-                hideBottom();
             }
         });
     }
@@ -623,6 +624,7 @@ public class VodController extends BaseController {
         }
     }
 
+    void initSubtitleInfo() {
     void initSubtitleInfo() {
         int subtitleTextSize = SubtitleHelper.getTextSize(mActivity);
         mSubtitleView.setTextSize(subtitleTextSize);
