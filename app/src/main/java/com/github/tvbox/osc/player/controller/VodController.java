@@ -1,6 +1,7 @@
 package com.github.tvbox.osc.player.controller;
 
 import android.app.RemoteAction;
+import android.app.PendingIntent;
 import android.app.PictureInPictureParams;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
+
+import android.graphics.drawable.Icon;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.github.tvbox.osc.R;
@@ -626,6 +629,19 @@ public class VodController extends BaseController {
             }
 */            enterPictureInPictureMode(params);
 //            playFragment.getVodController().hideBottom();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private RemoteAction generateRemoteAction(int iconResId, int actionCode, String title, String desc) {
+
+        final PendingIntent intent =
+                PendingIntent.getBroadcast(
+                        PlayActivity.this,
+                        actionCode,
+                        new Intent("PIP_VOD_CONTROL").putExtra("action", actionCode),
+                        0);
+        final Icon icon = Icon.createWithResource(PlayActivity.this, iconResId);
+        return (new RemoteAction(icon, title, desc, intent));
     }
 
     void setLandscapePortrait() {
