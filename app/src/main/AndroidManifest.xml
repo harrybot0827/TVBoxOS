@@ -45,14 +45,17 @@
 
         <activity
             android:name=".ui.activity.LivePlayActivity"
+            android:supportsPictureInPicture="true"
             android:screenOrientation="sensorLandscape" />
         <activity
             android:name=".ui.activity.DetailActivity"
             android:configChanges="orientation|screenSize"
+            android:supportsPictureInPicture="true"
             android:screenOrientation="sensorLandscape" />
         <activity
             android:name=".ui.activity.PlayActivity"
             android:configChanges="orientation|screenSize"
+            android:supportsPictureInPicture="true"
             android:screenOrientation="sensorLandscape" />
         <activity
             android:name=".ui.activity.PushActivity"
