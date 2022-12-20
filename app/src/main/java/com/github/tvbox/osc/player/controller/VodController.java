@@ -625,7 +625,6 @@ public class VodController extends BaseController {
     }
 
     void initSubtitleInfo() {
-    void initSubtitleInfo() {
         int subtitleTextSize = SubtitleHelper.getTextSize(mActivity);
         mSubtitleView.setTextSize(subtitleTextSize);
     }
