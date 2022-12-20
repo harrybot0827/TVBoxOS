@@ -98,6 +98,10 @@ public class VodController extends BaseController {
         };
     }
 
+    private static final int PIP_BOARDCAST_ACTION_PREV = 0;
+    private static final int PIP_BOARDCAST_ACTION_PLAYPAUSE = 1;
+    private static final int PIP_BOARDCAST_ACTION_NEXT = 2;
+
     SeekBar mSeekBar;
     TextView mCurrentTime;
     TextView mTotalTime;
