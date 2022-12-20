@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 
+import com.lzf.easyfloat.EasyFloat
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.github.tvbox.osc.R;
 import com.github.tvbox.osc.api.ApiConfig;
@@ -610,7 +611,7 @@ public class VodController extends BaseController {
     }
 
     void setWindowFloat() {
-        EasyFloat.with(this).setLayout(R.layout.FloatingView).show();
+        EasyFloat.with(this).show();
     }
 
     void setLandscapePortrait() {
