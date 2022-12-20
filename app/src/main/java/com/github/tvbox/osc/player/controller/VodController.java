@@ -129,6 +129,7 @@ public class VodController extends BaseController {
     public SimpleSubtitleView mSubtitleView;
     TextView mZimuBtn;
     TextView mAudioTrackBtn;
+    public TextView mWindowFloatBtn;
     public TextView mLandscapePortraitBtn;
 
     Handler myHandle;
@@ -193,6 +194,7 @@ public class VodController extends BaseController {
         mSubtitleView = findViewById(R.id.subtitle_view);
         mZimuBtn = findViewById(R.id.zimu_select);
         mAudioTrackBtn = findViewById(R.id.audio_track_select);
+        mWindowFloatBtn = findViewById(R.id.window_float);
         mLandscapePortraitBtn = findViewById(R.id.landscape_portrait);
 
         initSubtitleInfo();
@@ -576,6 +578,14 @@ public class VodController extends BaseController {
                 hideBottom();
             }
         });
+        mWindowFloatBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FastClickCheckUtil.check(view);
+                setWindowFloat();
+                hideBottom();
+            }
+        });
         mLandscapePortraitBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -596,6 +606,10 @@ public class VodController extends BaseController {
                 mLandscapePortraitBtn.setText("竖屏");
             }
         }
+    }
+
+    void setWindowFloat() {
+        mWindowFloatBtn.setText("ok");
     }
 
     void setLandscapePortrait() {
