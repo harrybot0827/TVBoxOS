@@ -610,7 +610,7 @@ public class VodController extends BaseController {
     }
 
     void setWindowFloat() {
-        mWindowFloatBtn.setText("ok");
+        EasyFloat.with(this).setLayout(R.layout.FloatingView).show()
     }
 
     void setLandscapePortrait() {
