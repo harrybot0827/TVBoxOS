@@ -622,7 +622,6 @@ public class VodController extends BaseController {
             }
 */            enterPictureInPictureMode(params);
 //            playFragment.getVodController().hideBottom();
-        }
     }
 
     void setLandscapePortrait() {
